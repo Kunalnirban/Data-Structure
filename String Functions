@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    char str[] = "Kunal ";
+    char str1[] = "Yadav";
+    char str2[] = "Nirban";
+    char str3[10];
+
+    printf("\n \n");
+    printf("length of str string will be --> %d \n", strlen(str));
+    printf("copying string str2 into str3 -->  %s \n",strcpy(str3,str2));
+    printf("comparing string str1 and str2 --> %d \n", strcmp(str1, str2));
+    printf("Concatinating string str and str1 --> %s \n", strcat(str, str1));
+    printf("Reversing an string str2 --> %s \n", strrev(str2));
+    printf("Making characters in lowercase of string str --> %s \n", strlwr(str));
+    printf("Making characters in uppercase of string str --> %s \n", strupr(str));
+
+
+return 0;
+}
