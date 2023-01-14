@@ -1,0 +1,40 @@
+#include<stdio.h>
+
+// traversing an array
+void display(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        printf("\n value at %d is %d \n", i, arr[i]);
+    }
+}
+// deletion in array at given index
+int deletionAtGivenIndex(int arr[], int size, int index)
+{  
+        printf("\n ------- After deletion ------- \n");
+        for (int i = index; i < size; i++)
+        {
+            arr[i] = arr[i+1];
+
+        }
+}
+
+
+int main()
+{
+    int capacity = 100;
+    int arr[100] = {10, 2, 34, 5, 6};
+    int size = 5;
+    int index;
+
+    display(arr, size);
+
+     printf(" \n Enter the index whose number to be deleted \n");
+    scanf("%d", &index);
+
+    deletionAtGivenIndex(arr, size, index);
+    size -= 1;
+    display(arr, size);
+
+return 0;
+}
