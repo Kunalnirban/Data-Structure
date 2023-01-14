@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+void travasal(struct node *ptr)
+{
+
+    while (ptr != NULL)
+    {
+        printf("Element : %d \n", ptr -> data);
+        ptr = ptr->next;
+    }
+}
+
+struct node * deleteFirst(struct node * head){
+    struct node * ptr = head;
+    head = head -> next;
+    free (ptr);
+    return head;
+
+}
+
+int main()
+{
+    struct node *head;
+    struct node *second;
+    struct node *third;
+    struct node *fourth;
+
+    // allocates memory for nodes of linked list in heap
+    head = (struct node *)malloc(sizeof(struct node));
+    second = (struct node *)malloc(sizeof(struct node));
+    third = (struct node *)malloc(sizeof(struct node));
+    fourth = (struct node *)malloc(sizeof(struct node));
+
+    // link first and second nodes
+    head->data = 7;
+    head->next = second;
+
+    // link second and third nodes
+    second->data = 11;
+    second->next = third;
+
+    // link second and third nodes
+    third->data = 12;
+    third->next = fourth;
+
+    // terminate the list at the third node
+    fourth->data = 16;
+    fourth->next = NULL;
+
+    int choice;
+    printf("Select Operation to be performed \n");
+    printf("1. Traversal\n2. deletion\n");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1:
+            travasal(head);
+            break;
+        case 2:
+            head = deleteFirst(head);
+            printf(":: After Deletion :: \n");
+            travasal(head);
+        case 3:
+            
+    }
+
+    
+
+    return 0;
+}
